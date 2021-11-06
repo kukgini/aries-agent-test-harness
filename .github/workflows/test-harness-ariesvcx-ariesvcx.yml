@@ -44,13 +44,3 @@ jobs:
           TEST_SCOPE: "-t @T001-RFC0036,@T002-RFC0036,@T003-RFC0036,@T001-RFC0037,@T001.2-RFC0037,@T001.3-RFC0037,@T001.4-RFC0037,@T001.5-RFC0037,@T003-RFC0037,@T003.1-RFC0037,@T001-RFC0160,@T002-RFC0160,@T003-RFC0160"
           REPORT_PROJECT: aries-vcx  
         continue-on-error: true
-      - uses: actions/upload-artifact@v2
-        with:
-          name: agent-logs
-          path: ./test-harness/.logs/
-      - name: run-send-gen-test-results-secure
-        uses: ./test-harness/actions/run-send-gen-test-results-secure
-        with:
-          REPORT_PROJECT: aries-vcx 
-          ADMIN_USER: ${{ secrets.AllureAdminUser }}
-          ADMIN_PW: ${{ secrets.AllureAdminPW }}
