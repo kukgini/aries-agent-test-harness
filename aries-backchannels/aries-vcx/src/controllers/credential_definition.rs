@@ -2,7 +2,6 @@ use std::sync::Mutex;
 use actix_web::{web, Responder, post, get};
 use crate::error::{HarnessError, HarnessErrorType, HarnessResult};
 use aries_vcx::handlers::issuance::credential_def::CredentialDef;
-use pickledb::{PickleDb, PickleDbDumpPolicy};
 
 use uuid;
 use crate::Agent;
